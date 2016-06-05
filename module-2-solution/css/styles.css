@@ -1,0 +1,88 @@
+
+* {
+	box-sizing: border-box;	
+}
+
+body {
+	background-color: lightgrey;
+	font-family: 	"Times New Roman", Times, serif;
+	font-size: 	10;
+}
+
+h1 {
+	text-align: center;
+	width: 100%;
+}
+
+section {
+	clear: right;
+}
+
+p {
+	padding: 10px;
+}
+.row {
+	width: 100%;
+	display: table;
+}
+
+/* Define a section class for housing configuration not specific to the actual screen size - probably should pick a better name than section
+   but leaving it for now. */
+.section {
+	float: left;
+	border: 1px solid black;
+	background-color: darkgrey;
+	padding: 0px;
+	margin: 10px;
+}
+
+.section-title {
+	float: right;
+	border: 1px solid black;
+	width: 100px;
+	height: 20px;
+	text-align: center;
+	padding: 0px;
+	color: white;
+}
+
+.section-title1{
+	background-color: peru;
+}
+
+.section-title2{
+	background-color: lightcoral;
+}
+
+.section-title3{
+	background-color: steelblue;
+}
+
+
+/* Define media queries - things specific to screen size */
+@media (min-width: 992px) {
+	.section-lg {
+		display: table-cell;
+		width: 30%;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.section-md {
+		display: table-cell;
+		width: 45%;
+	}
+
+	/* Kind of a hack to force the bottom element to full size ... might be worth reviewing the section on negative margin again*/
+	.section-md-bottom {
+		display: table-cell;
+		width: calc(90% + 20px);
+	}
+}
+
+@media (max-width: 767px) {
+	.section-sm {
+		display: table-cell;
+		width: 90%;
+	}
+}
